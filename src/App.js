@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Cards from './cards.js'
-import Navbar from './navbar.js'
-import Button from './buttons.js'
-import Login from './login.js'
-import {ContextProvider} from './Context.js'
+
+import Navbar from './Content/navbar.js'
+import Button from './Content/buttons.js'
+import Login from './Content/login.js'
+import {ContextProvider} from './Content/Context.js'
 
 function App() {
   return (
@@ -15,13 +15,7 @@ function App() {
 			<div className="container-fluid m-1">
 				<Button />
 			</div>
-			<div className="container-fluid bg-warning">
-				<div className="container-fluid d-flex">
-					<Cards />
-					<Cards />
-					<Cards />
-				</div>
-			</div>
+			
 			<div className="container-fluid"><Login /></div>
 	    </div>
 	    </ContextProvider>
