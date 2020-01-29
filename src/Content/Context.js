@@ -5,9 +5,20 @@ const ContextAPI = React.createContext()
 
 
 class ContextProvider extends React.Component {
+constructor(props) {
+	super(props)
 
+	this.user = {
+		 name: "",
+		 emnail:"",
+		 token: "",
+		 auth: false
+	}
+}
 // FUNÇÕES UNIVERSAIS
-
+getUser = () =>{
+	if(this.user.auth) return this.user.JSON()
+}
 teste =()=>{
 	let aux = []
 	aux.push(document.querySelector("#name").value)
@@ -45,7 +56,8 @@ teste =()=>{
 	render() {
 		return (
 			<ContextAPI.Provider value={{	
-				teste: this.teste
+				teste: this.teste,
+				getUser: this.getUser
 			}}>
 				{this.props.children}
 			</ContextAPI.Provider>

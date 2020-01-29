@@ -1,7 +1,7 @@
--import React from 'react'
+import React from 'react'
 import {ContextConsumer} from "./Context.js"
 
-export default function login() {
+export default function simpleCad() {
 	return (
 		<div>
 			<form className="w-50 mx-auto my-2 cad">

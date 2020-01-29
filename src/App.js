@@ -3,7 +3,7 @@ import './App.css';
 
 import Navbar from './Content/navbar.js'
 import Button from './Content/buttons.js'
-import Login from './Content/login.js'
+import SimpleCad from './Content/simpleCad.js'
 import {ContextProvider} from './Content/Context.js'
 
 function App() {
@@ -16,7 +16,10 @@ function App() {
 				<Button />
 			</div>
 			
-			<div className="container-fluid"><Login /></div>
+			<div className="container-fluid">
+
+		</div>
+			<SimpleCad />
 	    </div>
 	    </ContextProvider>
     </>

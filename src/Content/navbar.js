@@ -1,20 +1,28 @@
 import React from 'react'
+import {ContextConsumer} from "./Context.js"
 
 export default function navbar() {
 	return (
 		<div>
-			<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-				<a className="navbar-brand" href="http://localhost:3000" >Seu website</a>
+			<div className="container-fluid">
+				<nav className="navbar navbar-inverse">
+
+		{/************************************************** LOGO **************************************************/}
+					<div className="navbar navbar-header">
+						<a className="navbar-brand" href="http://localhost:3000" >Seu website</a>
+					</div>
+		{/************************************************** MENU PRINCIPAL **************************************************/}
 				<ul className="nav navbar-nav">
-					<li className="nav-item active">
-						<a className="nav-link" href="http://localhost:3000">link 1 <span className="sr-only">(current)</span></a>
+					<li  className="active">
+						<a className="nav-link" href="http://localhost:3000">link 1</a>
 					</li>
-					<li className="nav-item">
+					<li>
 						<a className="nav-link" href="http://localhost:3000">Link 2</a>
 					</li>
-					<li className="nav-item">
+					<li>
 						<a className="nav-link" href="http://localhost:3000">Link 3</a>
 					</li>
+
 					<div className="dropdown open">
 						<button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Link 4
@@ -27,7 +35,10 @@ export default function navbar() {
 					</div>
 				</ul>
 
-			</nav>
+		{/************************************************** MENU À DIREITA **************************************************/}
+
+				</nav>
+			</div>
 		</div>
 	)
 }
