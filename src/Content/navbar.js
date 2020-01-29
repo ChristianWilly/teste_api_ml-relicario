@@ -4,29 +4,49 @@ import {ContextConsumer} from "./Context.js"
 export default function navbar() {
 	return (
 		<div>
-			<div className="container-fluid">
-				<nav className="navbar navbar-inverse">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+</div>
+	)
+}
 
-		{/************************************************** LOGO **************************************************/}
+/* 
+
+			<nav className="navbar navbar-inverse">
+				<div className="d-flex">
+
 					<div className="navbar navbar-header">
 						<a className="navbar-brand" href="http://localhost:3000" >Seu website</a>
 					</div>
-		{/************************************************** MENU PRINCIPAL **************************************************/}
 				<ul className="nav navbar-nav">
 					<li  className="active">
-						<a className="nav-link" href="http://localhost:3000">link 1</a>
+						<a href="http://localhost:3000">Link 1</a>
 					</li>
 					<li>
-						<a className="nav-link" href="http://localhost:3000">Link 2</a>
+						<a href="http://localhost:3000">Link 2</a>
 					</li>
 					<li>
-						<a className="nav-link" href="http://localhost:3000">Link 3</a>
+						<a href="http://localhost:3000">Link 3</a>
 					</li>
 
-					<div className="dropdown open">
-						<button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	{/*				<div className="dropdown open">
+						<li className="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Link 4
-						</button>
+						</li>
 						<div className="dropdown-menu" aria-labelledby="dropdownMenu1">
 							<a className="dropdown-item" href="http://localhost:3000" > Sub Link</a>
 							<a className="dropdown-item" href="http://localhost:3000" > Sub Link</a>
@@ -35,10 +55,12 @@ export default function navbar() {
 					</div>
 				</ul>
 
-		{/************************************************** MENU À DIREITA **************************************************/}
-
-				</nav>
+				<ul className="nav navbar-nav navbar-right">
+					<li> 
+						<a href="#">Login</a>
+					</li>
+				</ul>
 			</div>
-		</div>
-	)
-}
+		</nav>
+
+*/
