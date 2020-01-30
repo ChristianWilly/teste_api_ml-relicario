@@ -1,25 +1,25 @@
 import React from 'react';
 import './App.css';
+import {Switch, Route} from 'react-router-dom'
 
 import Navbar from './Content/navbar.js'
-import Button from './Content/buttons.js'
-import SimpleCad from './Content/simpleCad.js'
 import {ContextProvider} from './Content/Context.js'
+
+import Login from './Login/login.js'
+import Home from './Home/home.js'
+import Profile from "./Profile/profile.js"
 
 function App() {
   return (
   	<>
   		<ContextProvider>
+		<Navbar />
 	    <div className="App">
-			<Navbar />
-			<div className="container-fluid m-1">
-				<Button />
-			</div>
-			
-			<div className="container-fluid">
-
-		</div>
-			<SimpleCad />
+	    <Switch>
+    		<Route path="/" exact component={Home} />
+    		<Route path="/profile" component={Profile} />
+    		<Route path="/login" component={Login} />	    	
+	    </Switch>
 	    </div>
 	    </ContextProvider>
     </>

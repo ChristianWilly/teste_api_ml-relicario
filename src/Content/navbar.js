@@ -1,66 +1,45 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import {ContextConsumer} from "./Context.js"
 
 export default function navbar() {
 	return (
-		<div>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav>
-</div>
+		<ContextConsumer>
+			{user =>
+			<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+			  <Link className="navbar-brand" to="/">Relicário</Link>
+			  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			    <span className="navbar-toggler-icon"></span>
+			  </button>
+
+			  <div className="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul className="navbar-nav mr-auto">
+			      
+			      <li className="nav-item">
+			        <Link className="nav-link" to="/profile">Perfil</Link>
+			      </li>
+			      <li className="nav-item dropdown">
+			        <Link className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          Mercado Livre
+			        </Link>
+			        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+			          <Link className="dropdown-item" href="#">Logar</Link>
+			          <div className="dropdown-divider"></div>
+			          <Link className="dropdown-item" href="#">Copiar vendas</Link>
+			          <div className="dropdown-divider"></div>
+			          <Link className="dropdown-item" href="#">Relatórios</Link>
+			        </div>
+			      </li>
+			    </ul>
+
+			    <ul className="navbar navbar-nav">
+			    		<li className="nav-item">
+			    				<Link className="nav-link" to="/login">Login</Link>
+			    		</li>
+			    	</ul>	
+			  </div>
+			</nav>
+			}
+		</ContextConsumer>
 	)
 }
-
-/* 
-
-			<nav className="navbar navbar-inverse">
-				<div className="d-flex">
-
-					<div className="navbar navbar-header">
-						<a className="navbar-brand" href="http://localhost:3000" >Seu website</a>
-					</div>
-				<ul className="nav navbar-nav">
-					<li  className="active">
-						<a href="http://localhost:3000">Link 1</a>
-					</li>
-					<li>
-						<a href="http://localhost:3000">Link 2</a>
-					</li>
-					<li>
-						<a href="http://localhost:3000">Link 3</a>
-					</li>
-
-	{/*				<div className="dropdown open">
-						<li className="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Link 4
-						</li>
-						<div className="dropdown-menu" aria-labelledby="dropdownMenu1">
-							<a className="dropdown-item" href="http://localhost:3000" > Sub Link</a>
-							<a className="dropdown-item" href="http://localhost:3000" > Sub Link</a>
-							<a className="dropdown-item" href="http://localhost:3000" > Sub Link</a>
-						</div>
-					</div>
-				</ul>
-
-				<ul className="nav navbar-nav navbar-right">
-					<li> 
-						<a href="#">Login</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-
-*/
