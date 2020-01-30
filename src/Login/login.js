@@ -1,21 +1,26 @@
 import React from 'react'
 import "./Login.css"
 
-export default function Login() {
+// import from files 
+import {ContextConsumer} from '../Content/Context.js'
 
+export default function Login() {
 	return (
 		<div>
-						<form action="#" className="login-form">
+				<ContextConsumer>
+        {user =>
+         		<form action="#" className="login-form">
 							<h1>BEM VINDO!</h1>
 							<div className="text-user">
 								<input className="user" type="text" placeholder="Usuário" />
 							</div>
 							<div className="text-pass">
-								<input className="paswd" type="password" placeholder="Senha"/>
+								<input className="pass" type="password" placeholder="Senha"/>
 							</div>
 							<div className="container-fluid button-container"> 	
 								<button 
-								type="button" 
+								type="button"
+                onClick={()=> user.caduser()}
 								className="m-1 btn btn-success"
 								>
 								Fazer Login
@@ -28,6 +33,8 @@ export default function Login() {
 								</button>
 							</div>
 						</form>
+        }    
+        </ContextConsumer>
 		</div>
 	)
 }

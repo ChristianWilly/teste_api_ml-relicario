@@ -19,15 +19,15 @@ export default function navbar() {
 			        <Link className="nav-link" to="/profile">Perfil</Link>
 			      </li>
 			      <li className="nav-item dropdown">
-			        <Link className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			        <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			          Mercado Livre
 			        </Link>
 			        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-			          <Link className="dropdown-item" href="#">Logar</Link>
+			          <Link className="dropdown-item" to="#">Logar</Link>
 			          <div className="dropdown-divider"></div>
-			          <Link className="dropdown-item" href="#">Copiar vendas</Link>
+			          <Link className="dropdown-item" to="#">Copiar vendas</Link>
 			          <div className="dropdown-divider"></div>
-			          <Link className="dropdown-item" href="#">Relatórios</Link>
+			          <Link className="dropdown-item" to="#">Relatórios</Link>
 			        </div>
 			      </li>
 			    </ul>

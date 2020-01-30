@@ -53,11 +53,33 @@ teste =()=>{
 }
 
 
+cadUser = () => {
+	let email = document.querySelector(".user").value
+	let senha = document.querySelector(".pass").value
+	
+	axios({
+		method: "post",
+		url: "http://localhost:5000/user/login-auth",
+		data: {
+			email: email,
+			senha: senha
+		}
+	}).then(response => {		
+		console.log(response.data)
+	}).catch(err => {
+		let erro = err.request.response
+		alert(erro)
+	})
+}
+
+
+
 	render() {
 		return (
 			<ContextAPI.Provider value={{	
 				teste: this.teste,
-				getUser: this.getUser
+				getUser: this.getUser,
+				caduser: this.cadUser
 			}}>
 				{this.props.children}
 			</ContextAPI.Provider>
