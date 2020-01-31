@@ -69,9 +69,40 @@ cadUser = () => {
 	}).catch(err => {
 		let erro = err.request.response
 		alert(erro)
-	})
+	})	
 }
 
+registerUser =()=>{	
+	let nam = document.getElementById("inputNome").value
+	let snam = document.getElementById("inputSobreNome").value
+	let mai = document.getElementById("inputEmail").value
+	let pas = document.getElementById("inputPass").value
+	let cep = document.getElementById("inputCEP").value
+	let end = document.getElementById("inputAddress").value
+	let cit = document.getElementById("inputCity").value
+	let sta = document.getElementById("inputState").value
+
+	axios({
+		method: "post",
+		url: "http://localhost:5000/user/register",
+		data: {
+			name: nam,
+			sname: snam,
+			email: mai,
+			senha: pas,
+			cep: cep,
+			rua: end,
+			cidade: cit,
+			estado: sta,
+			accessType: "admin"
+		}
+	}).then(response => {		
+		console.log(response.data)
+	}).catch(err => {
+		let erro = err.request.response
+		alert(erro)
+	})
+}
 
 
 	render() {
@@ -79,7 +110,8 @@ cadUser = () => {
 			<ContextAPI.Provider value={{	
 				teste: this.teste,
 				getUser: this.getUser,
-				caduser: this.cadUser
+				caduser: this.cadUser,
+				registerUser: this.registerUser
 			}}>
 				{this.props.children}
 			</ContextAPI.Provider>

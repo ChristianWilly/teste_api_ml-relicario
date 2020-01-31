@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Login.css"
+import {Link} from 'react-router-dom'
 
 // import from files 
 import {ContextConsumer} from '../Content/Context.js'
@@ -21,16 +22,13 @@ export default function Login() {
 								<button 
 								type="button"
                 onClick={()=> user.caduser()}
-								className="m-1 btn btn-success"
+								className="m-1 btn btn-primary"
 								>
-								Fazer Login
+								Login
 								</button>
-								<button
-								type="button" 
-								className="m-1 btn btn-danger"
-								>
-								Retornar
-								</button>
+								<Link className="m-1 btn btn-success" to='/form'>
+									Cadastre-se!
+								</Link>
 							</div>
 						</form>
         }    

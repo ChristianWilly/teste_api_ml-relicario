@@ -8,6 +8,7 @@ import {ContextProvider} from './Content/Context.js'
 import Login from './Login/login.js'
 import Home from './Home/home.js'
 import Profile from "./Profile/profile.js"
+import Form from './Formulario/formulario.js'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
     		<Route path="/" exact component={Home} />
     		<Route path="/profile" component={Profile} />
     		<Route path="/login" component={Login} />	    	
+        <Route path="/form" component={Form} />       
 	    </Switch>
 	    </div>
 	    </ContextProvider>
