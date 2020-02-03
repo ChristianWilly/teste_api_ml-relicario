@@ -15,44 +15,10 @@ constructor(props) {
 		 auth: false
 	}
 }
-// FUNÇÕES UNIVERSAIS
-getUser = () =>{
-	if(this.user.auth) return this.user.JSON()
-}
-teste =()=>{
-	let aux = []
-	aux.push(document.querySelector("#name").value)
-	aux.push(document.querySelector("#email").value)
-	aux.push(document.querySelector("#senha").value)
-
-	if(aux[0] === ""){
-		alert("nome ta vazio")
-		document.querySelector("#name").focus()
-	}else if(aux[1] === ""){
-		alert("email esta vazio")
-		document.querySelector("#email").focus()
-	}else if(aux[2] === ""){
-		alert("senha esta vazia")
-		document.querySelector("#senha").focus()
-	}
-
-	axios({
-	  	method: 'post',
-		url: 'https://api-relicario.herokuapp.com/auth/registro',
-		data: {
-			name: aux[0],
-			email: aux[1],
-			password: aux[2]
-		}
-	}).then((res)=>{
-		if(res.status === 200){
-			alert('Usuário cadastrado com sucesso')
-		}
-	})
-	  .catch((err) => alert("Erro: "+err))
-}
+			 // MÉTODO PARA BUSCA DE USUÁRIOS
 
 
+             // Método para autenticação de login
 cadUser = () => {
 	let email = document.querySelector(".user").value
 	let senha = document.querySelector(".pass").value
@@ -72,6 +38,9 @@ cadUser = () => {
 	})	
 }
 
+
+
+             // MÉTODO PARA CADASTRO DE NOVO USUÁRIO
 registerUser =()=>{	
 	let nam = document.getElementById("inputNome").value
 	let snam = document.getElementById("inputSobreNome").value
@@ -105,13 +74,13 @@ registerUser =()=>{
 }
 
 
+
 	render() {
 		return (
 			<ContextAPI.Provider value={{	
-				teste: this.teste,
-				getUser: this.getUser,
 				caduser: this.cadUser,
-				registerUser: this.registerUser
+				registerUser: this.registerUser,
+
 			}}>
 				{this.props.children}
 			</ContextAPI.Provider>

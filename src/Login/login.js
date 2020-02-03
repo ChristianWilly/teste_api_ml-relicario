@@ -29,6 +29,14 @@ export default function Login() {
 								<Link className="m-1 btn btn-success" to='/form'>
 									Cadastre-se!
 								</Link>
+						
+							<button 
+								type="button"
+            				   	disabled
+								className="m-1 btn btn-primary"
+							>
+								Teste Redirect()
+							</button>
 							</div>
 						</form>
         }    
