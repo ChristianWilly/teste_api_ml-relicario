@@ -8,14 +8,12 @@ class ContextProvider extends React.Component {
 constructor(props) {
 	super(props)
 
-	this.user = {
+	this.state = {
 		 name: "",
-		 emnail:"",
-		 token: "",
-		 auth: false
+ 		 token: "",
 	}
 }
-			 // MÉTODO PARA BUSCA DE USUÁRIOS
+
 
 
              // Método para autenticação de login
@@ -25,13 +23,17 @@ cadUser = () => {
 	
 	axios({
 		method: "post",
-		url: "http://localhost:5000/user/login-auth",
+		url: "http://localhost:5000/user/auth",
 		data: {
 			email: email,
 			senha: senha
 		}
 	}).then(response => {		
-		console.log(response.data)
+		let data = response.data
+		this.setState({
+			token: data.token,
+			name: data.user.name
+		})
 	}).catch(err => {
 		let erro = err.request.response
 		alert(erro)
@@ -50,6 +52,7 @@ registerUser =()=>{
 	let end = document.getElementById("inputAddress").value
 	let cit = document.getElementById("inputCity").value
 	let sta = document.getElementById("inputState").value
+	let opt = document.getElementById("accessLevel").value
 
 	axios({
 		method: "post",
@@ -63,7 +66,7 @@ registerUser =()=>{
 			rua: end,
 			cidade: cit,
 			estado: sta,
-			accessType: "admin"
+			accessType: opt
 		}
 	}).then(response => {		
 		console.log(response.data)
@@ -77,7 +80,8 @@ registerUser =()=>{
 
 	render() {
 		return (
-			<ContextAPI.Provider value={{	
+			<ContextAPI.Provider value={{
+				usuario: this.state,	
 				caduser: this.cadUser,
 				registerUser: this.registerUser,
 

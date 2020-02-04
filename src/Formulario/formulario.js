@@ -67,6 +67,14 @@ function buscaCep(){
 				      <input type="text" className="form-control" id="inputState" placeholder="Estado"/>
 				    </div>
 				  </div>
+				  <div class="form-group">
+				  	<label htmlFor="accessLevel" className="text-light">Tipo de acesso:</label>
+					  <select class="form-control" id="accessLevel">
+						    <option>Administrador</option>
+						    <option>Gerente</option>
+						    <option>Vendedor</option>
+					  </select>
+				  </div>
 				  <div className="container-fluid mx-auto">
 					  <button onClick={()=>user.registerUser()} className="m-1 btn btn-secondary">Enviar</button>
 					  <Link  className="m-1 btn btn-danger" to='/'>Voltar</Link>
